@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script src="./script.js"></script>
+    <title>UniConnect</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="bar">
+        <div class="logo">uniconnect</div>
+        <span class="material-symbols-outlined"> notifications </span>
+      </div>
+
+      <div class="pages">
+        <div id="social" class="social-page page hidden">
+          <div class="page-text">social</div>
+          <div class="toggle">
+            <div
+              id="chatsToggle"
+              class="toggle-button"
+              onclick="toggleSocial('chats')"
+            >
+              chats
+            </div>
+            <div
+              id="postsToggle"
+              class="toggle-button"
+              onclick="toggleSocial('posts')"
+            >
+              posts
+            </div>
+          </div>
+
+          <div id="chats" class="toggle-page">
+            <div class="chat">
+              <div class="chat-image"></div>
+              <div class="chat-information">
+                <div class="event-title">person 1</div>
+                <div class="event-details">last message</div>
+              </div>
+            </div>
+            <div class="chat">
+              <div class="chat-image"></div>
+              <div class="chat-information">
+                <div class="event-title">person 2</div>
+                <div class="event-details">last message</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="posts" class="toggle-page">
+            <div class="post">
+              <div class="post-image"></div>
+              <div class="post-row">
+                <div class="chat-image"></div>
+                <div class="chat-information">
+                  <div class="event-title">person 1</div>
+                  <div class="event-details">description</div>
+                </div>
+                <span class="material-symbols-outlined heart-icon">
+                  favorite
+                </span>
+              </div>
+            </div>
+            <div class="post">
+              <div class="post-image"></div>
+              <div class="post-row">
+                <div class="chat-image"></div>
+                <div class="chat-information">
+                  <div class="event-title">person 2</div>
+                  <div class="event-details">description</div>
+                </div>
+                <span class="material-symbols-outlined heart-icon">
+                  favorite
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="uni" class="page hidden">
+          <div class="page-text">university</div>
+          <div class="sublet">
+            <div class="sublet-row-1">
+              <div class="room-image"></div>
+              <div class="sublet-information">
+                <div class="event-title">news 1</div>
+                <div class="event-details">details...</div>
+              </div>
+            </div>
+          </div>
+          <div class="sublet">
+            <div class="sublet-row-1">
+              <div class="room-image"></div>
+              <div class="sublet-information">
+                <div class="event-title">news 2</div>
+                <div class="event-details">details...</div>
+              </div>
+            </div>
+          </div>
+          <div class="sublet">
+            <div class="sublet-row-1">
+              <div class="room-image"></div>
+              <div class="sublet-information">
+                <div class="event-title">news 3</div>
+                <div class="event-details">details...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="home" class="page">
+          <div class="page-text">upcoming events</div>
+          <div id="event1" class="event">
+            <div class="row">
+              <div class="event-title">event 1</div>
+              <span
+                class="material-symbols-outlined delete-icon"
+                onclick="removeEvent('event1')"
+              >
+                delete
+              </span>
+            </div>
+            <div class="row">
+              <div class="event-details">event details...</div>
+              <button id="event1button" onclick="updateEvent('event1button')">
+                register
+              </button>
+            </div>
+          </div>
+          <div id="event2" class="event">
+            <div class="row">
+              <div class="event-title">event 2</div>
+              <span
+                class="material-symbols-outlined delete-icon"
+                onclick="removeEvent('event2')"
+              >
+                delete
+              </span>
+            </div>
+            <div class="row">
+              <div class="event-details">event details...</div>
+              <button id="event2button" onclick="updateEvent('event2button')">
+                register
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="more" class="page hidden">
+          <div class="page-text">sublets</div>
+          <div class="sublet">
+            <div class="sublet-row-1">
+              <div class="room-image"></div>
+              <div class="sublet-information">
+                <div class="event-title">room 1</div>
+                <div class="event-details">details...</div>
+              </div>
+            </div>
+            <div class="sublet-row-2">
+              <button>contact</button>
+            </div>
+          </div>
+          <div class="sublet">
+            <div class="sublet-row-1">
+              <div class="room-image"></div>
+              <div class="sublet-information">
+                <div class="event-title">room 2</div>
+                <div class="event-details">details...</div>
+              </div>
+            </div>
+            <div class="sublet-row-2">
+              <button>contact</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="settings" class="page hidden">
+          <div class="page-text">restore events</div>
+          <div id="deletedEvent1" class="deleted-event">
+            <div class="event-title">event 1</div>
+            <button
+              id="event1restore"
+              onclick="restoreEvent('deletedEvent1', 'event1restore')"
+            >
+              restore
+            </button>
+          </div>
+          <div id="deletedEvent2" class="deleted-event">
+            <div class="event-title">event 2</div>
+            <button
+              id="event2restore"
+              onclick="restoreEvent('deletedEvent2', 'event2restore')"
+            >
+              restore
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu">
+        <div id="socialTab" class="tab" onclick="changePage('social')">
+          <span class="material-symbols-outlined"> chat </span>
+          <div class="tab-text">social</div>
+        </div>
+        <div id="uniTab" class="tab" onclick="changePage('uni')">
+          <span class="material-symbols-outlined"> account_balance </span>
+          <div class="tab-text">uni</div>
+        </div>
+        <div id="homeTab" class="tab" onclick="changePage('home')">
+          <span class="material-symbols-outlined"> home </span>
+          <div class="tab-text">home</div>
+        </div>
+        <div id="moreTab" class="tab" onclick="changePage('more')">
+          <span class="material-symbols-outlined"> apps </span>
+          <div class="tab-text">more</div>
+        </div>
+        <div id="settingsTab" class="tab" onclick="changePage('settings')">
+          <span class="material-symbols-outlined"> settings </span>
+          <div class="tab-text">settings</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
